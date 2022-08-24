@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js" integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.20.2/video-js.min.css" integrity="sha512-kCCb9I/QM9hw+hm+JlN2ounNo2bRFZ4r9guSBv0BYk7RezWV2H8eI1unYnpJrU8+2g773WW1qNG+fSQ0X7M3Tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.20.2/video.min.js" integrity="sha512-8GgbC485o4ayA08dtXE6MEtCvm9A8yF3/iZetKydmJabl7MFKhtvM0wUQOKzm1UyVV3S8jNxbLBfVpeF4HDqkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        .vjs-paused .vjs-big-play-button,
+        .vjs-paused.vjs-has-started .vjs-big-play-button {
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function (){
+            const player = videojs(document.getElementById('myVideo'), {
+                controls: true, // 是否显示控制条
+                poster: '//vjs.zencdn.net/v/oceans.png', // 视频封面图地址
+                preload: 'auto',
+                autoplay: false,
+                fluid: true, // 自适应宽高
+                language: 'zh-CN', // 设置语言
+                muted: true, // 是否静音
+                inactivityTimeout: false,
+                controlBar: { // 设置控制条组件
+                    /* 设置控制条里面组件的相关属性及显示与否
+                    'currentTimeDisplay':true,
+                    'timeDivider':true,
+                    'durationDisplay':true,
+                    'remainingTimeDisplay':false,
+                    volumePanel: {
+                      inline: false,
+                    }
+                    */
+                    /* 使用children的形式可以控制每一个控件的位置，以及显示与否 */
+                    children: [
+                        {name: 'playToggle'}, // 播放按钮
+                        {name: 'currentTimeDisplay'}, // 当前已播放时间
+                        {name: 'progressControl'}, // 播放进度条
+                        {name: 'durationDisplay'}, // 总时间
+                        { // 倍数播放
+                            name: 'playbackRateMenuButton',
+                            'playbackRates': [0.5, 1, 1.5, 2, 2.5]
+                        },
+                        {
+                            name: 'volumePanel', // 音量控制
+                            inline: false, // 不使用水平方式
+                        },
+                        {name: 'FullscreenToggle'} // 全屏
+                    ]
+                },
+                sources: [ // 视频源
+                    {
+                        src: '//vjs.zencdn.net/v/oceans.mp4',
+                        type: 'video/mp4',
+                        poster: '//vjs.zencdn.net/v/oceans.png'
+                    }
+                ]
+            }, function () {
+                console.log('视频可以播放了', this);
+            });
+
+            $ById("start").onclick=function (){
+                let value = document.getElementById("name").value;
+                let path = host+"/video/mp4/"+value;
+                var data = {
+                    src: path,
+                    type: 'video/mp4',
+                    poster: '//vjs.zencdn.net/v/oceans.png'
+                };
+                player.pause();
+                player.src(data);
+                player.load(data);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 20px">
+        <div class="col-4 offset-4" style="background-color: lightgreen">
+            <input class="col-8" width="80%" type="text" id="name"/>
+            <button class="btn btn-outline-primary col-2" id="start">播放</button>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px">
+        <div class="col-4 offset-4" style="background-color: lightgreen">
+            <!-- vjs-big-play-centered可使大的播放按钮居住，vjs-fluid可使视频占满容器 -->
+            <video id="myVideo" class="video-js vjs-big-play-centered vjs-fluid col-12">
+            </video>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

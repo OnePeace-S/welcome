@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js" integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <video id="video" width="300" height="300" poster="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F14%2F62%2F59043cebb703f_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637115934&t=cd4ebc01b4b11fb45ce65a3b2dc7e933"></video>
+      <canvas id="canvas" width="300" height="300"></canvas><br>
+      <button id="camera">摄像头</button><button id="snap">拍照</button>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+  //用来匹配不同的浏览器
+  function getUserMedia(constraints,success,error){
+    if(navigator.mediaDevices.getUserMedia){
+      navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+    }else if (navigator.webkitGetUserMedia) {
+      navigator.webkitGetUserMedia(constraints,success,error);
+    }else if (navigator.mozGetUserMedia) {
+      navigator.mozGetUserMedia(constraints,success,error);
+    }else if (navigator.getUserMedia) {
+      navigator.getUserMedia(constraints,success,error)
+    }
+  }
+
+  //成功回调
+  function success(stream){
+    video.srcObject = stream;
+    video.play();
+  }
+  //失败回调
+  function error(error) {
+    console.log("访问用户媒体失败");
+  }
+
+
+  //视频窗口尺寸
+  let size = 300;
+  let video = document.getElementById('video');
+  let canvas = document.getElementById('canvas');
+  let context = canvas.getContext('2d');
+
+  //开启摄像头
+  if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
+    getUserMedia({video:{width:size,height:size}},success,error)
+  }else {
+    alert("不支持");
+  }
+
+  document.getElementById('camera').addEventListener('click',function(){
+    //视频窗口尺寸
+    let size = 300;
+    let video = document.getElementById('video');
+    let canvas = document.getElementById('canvas');
+    let context = canvas.getContext('2d');
+
+    //开启摄像头
+    if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
+      getUserMedia({video:{width:size,height:size}},success,error)
+    }else {
+      alert("不支持");
+    }
+    //实现拍照的功能
+    document.getElementById('snap').addEventListener('click',function(){
+      context.drawImage(video,0,0,size,size);
+    });
+
+  });
+</script>
+</html>
