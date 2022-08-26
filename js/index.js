@@ -12,7 +12,7 @@ const pages = {
     size:5
 }
 function queryList(search){
-    $myAjax({
+    $.myAjax({
         url:"/user/queryList",
         async:false,
         data:{

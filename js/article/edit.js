@@ -3,7 +3,7 @@ $(function() {
     editor = editormd("article_content", {
         width  : "100%",
         height : "600px",
-        path   : "/plugin/editor.md-1.5.0/lib/",
+        path   : "/welcome/plugin/editor.md-1.5.0/lib/",
         placeholder: "多写点，不然给你埋喽",
         saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
         htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
