@@ -29,8 +29,8 @@ const headNavBar = `
                         更多...
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/pages/article/edit.html">编辑</a></li>
-                        <li><a class="dropdown-item" href="/pages/article/view.html?article_code=11111">编辑</a></li>
+                        <li><a class="dropdown-item" href="/welcome/pages/article/edit.html">编辑</a></li>
+                        <li><a class="dropdown-item" href="/welcome/pages/article/view.html?article_code=11111">编辑</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">没有更多</a></li>
                     </ul>
