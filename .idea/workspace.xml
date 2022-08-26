@@ -6,157 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="086e7255-d11c-431a-93fc-bced3dbac587" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/js/article/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/article/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/article/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/article/view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/article/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/BUGS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/CHANGE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/Gulpfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/editormd.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Bold-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Bold-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Bold-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-BoldItalic-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-BoldItalic-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-BoldItalic-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Italic-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Italic-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Italic-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Light-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Light-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Light-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-LightItalic-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-LightItalic-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-LightItalic-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Regular-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Regular-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/fonts/OpenSans-Regular-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/scripts/linenumber.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/scripts/prettify/Apache-License-2.0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/scripts/prettify/lang-css.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/scripts/prettify/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/styles/jsdoc-default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/styles/prettify-jsdoc.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/docs/styles/prettify-tomorrow.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/@links.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/auto-height.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/change-mode.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/code-fold.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/custom-keyboard-shortcuts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/custom-toolbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/define-plugin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/delay-renderer-preview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/dynamic-create-editormd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/emoji.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/extends.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/external-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/flowchart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/form-get-value.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/full.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/goto-line.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/html-preview-markdown-to-html-custom-toc-container.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/html-preview-markdown-to-html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/html-tags-decode.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/image-cross-domain-upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/image-upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/images/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/images/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/images/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/images/editormd-screenshot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/js/require.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/js/sea.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/js/seajs-main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/js/zepto.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/katex.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/manually-load-modules.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/multi-editormd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/multi-languages.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/on-off.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/onchange.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/onfullscreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/onload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/onpreviewing-onpreviewed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/onresize.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/onscroll-onpreviewscroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/onwatch-onunwatch.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/page-break.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/php/cross-domain-upload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/php/editormd.uploader.class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/php/post.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/php/upload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/php/upload_callback.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/readonly.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/resettings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/search-replace.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/sequence-diagram.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/set-get-replace-selection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/simple.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/sync-scrolling.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/task-lists.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/test.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/themes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/toc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/toolbar-auto-fixed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/use-requirejs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/use-seajs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/examples/use-zepto.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/code-block-dialog/code-block-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/emoji-dialog/emoji-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/emoji-dialog/emoji.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/goto-line-dialog/goto-line-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/help-dialog/help-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/help-dialog/help.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/html-entities-dialog/html-entities-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/html-entities-dialog/html-entities.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/image-dialog/image-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/link-dialog/link-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/plugin-template.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/preformatted-text-dialog/preformatted-text-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/reference-link-dialog/reference-link-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/table-dialog/table-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/plugins/test-plugin/test-plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.codemirror.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.dialog.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.form.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.logo.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.menu.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.preview.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.preview.themes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.tab.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/editormd.themes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/font-awesome.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/github-markdown.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/lib/prefixes.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/lib/variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/scss/prettify.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/src/editormd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/bootstrap-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/codemirror-searchbox-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/codemirror-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/js/searchbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/katex-tests.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/marked-@at-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/marked-emoji-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/marked-heading-link-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/marked-todo-list-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/qunit/qunit-1.16.0.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/editor.md-1.5.0/tests/qunit/qunit-1.16.0.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661496841552</updated>
-      <workItem from="1661496844097" duration="21118000" />
+      <workItem from="1661496844097" duration="22625000" />
     </task>
     <servers />
   </component>

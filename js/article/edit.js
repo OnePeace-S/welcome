@@ -22,9 +22,7 @@ $(function() {
 
 
     $("#article_form_submit").click(function (){
-
-        console.log(editor.getHTML())
-        console.log(editor.getMarkdown())
+        $("#article_view").empty();
         let viewEditor;
         viewEditor = editormd.markdownToHTML("article_view", {
             markdown        : editor.getMarkdown(),//+ "\r\n" + $("#append-test").text(),
