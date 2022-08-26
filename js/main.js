@@ -1,3 +1,6 @@
+const host = 'http://127.0.0.1:8001'
+
+
 if(document.getElementsByTagName("title")[0].text === 'Title'){
     document.title = '练习'
 }
@@ -5,47 +8,6 @@ if(document.getElementsByTagName("title")[0].text === 'Title'){
 window.onload=function (){
     document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin",headNavBar)
     document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend",footerHtml)
-}
-
-
-
-const host = 'http://127.0.0.1:8888'
-
-function $ById(id){
-    return document.getElementById(id);
-}
-function $ByTag(key,value){
-    return document.getElementsByTagNameNS(key,value);
-}
-
-//缩放图片到合适大小
-function ResizeImages()
-{
-    let myimg, oldwidth, oldheight;
-    let maxwidth=550;
-    let maxheight=880
-    let imgs = document.getElementById('article').getElementsByTagName('img');   //如果你定义的id不是article，请修改此处
-
-    for(let i=0;i<imgs.length;i++){
-        myimg = imgs[i];
-
-        if(myimg.width > myimg.height)
-        {
-            if(myimg.width > maxwidth)
-            {
-                oldwidth = myimg.width;
-                myimg.height = myimg.height * (maxwidth/oldwidth);
-                myimg.width = maxwidth;
-            }
-        }else{
-            if(myimg.height > maxheight)
-            {
-                oldheight = myimg.height;
-                myimg.width = myimg.width * (maxheight/oldheight);
-                myimg.height = maxheight;
-            }
-        }
-    }
 }
 
 
@@ -75,8 +37,8 @@ const headNavBar = `
                 </li>
             </ul>
             <div class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="搜索" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">search</button>
+                <input class="form-control me-2" type="search" id="index_search_value" placeholder="搜索" aria-label="Search">
+                <input class="btn btn-outline-success" type="button" value="搜素" id="index_search_button"></input>
             </div>
         </div>
     </div>
@@ -98,35 +60,30 @@ const footerHtml = `
     </div>
 
     <div class="col mb-3">
-      <h5>练习1-1</h5>
+      <h5>前端</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">主页</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">练习One</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">练习One</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">练习One</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">关于</a></li>
+        <li class="nav-item mb-2"><a href="https://cdnjs.com/" class="nav-link p-0 text-muted">cdnjs</a></li>
+        <li class="nav-item mb-2"><a href="https://v5.bootcss.com/" class="nav-link p-0 text-muted">bootstrap</a></li>
       </ul>
     </div>
 
     <div class="col mb-3">
-      <h5>练习1-2</h5>
+      <h5>Java</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">主页</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">练习Two</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">练习Two</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">练习Two</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">关于</a></li>
+        <li class="nav-item mb-2"><a href="https://docs.oracle.com/javase/8/docs/" class="nav-link p-0 text-muted">java8</a></li>
+        <li class="nav-item mb-2"><a href="https://www.springcloud.cc/" class="nav-link p-0 text-muted">springcloud中文网</a></li>
       </ul>
     </div>
 
     <div class="col mb-3">
-      <h5>练习1-3</h5>
+      <h5>其他</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        <li class="nav-item mb-2"><a href="https://www.hltv.org/" class="nav-link p-0 text-muted">HLTV</a></li>
+        <li class="nav-item mb-2"><a href="https://www.bilibili.com/" class="nav-link p-0 text-muted">哔哩哔哩</a></li>
+        <li class="nav-item mb-2"><a href="https://www.douyu.com/" class="nav-link p-0 text-muted">斗鱼</a></li>
+        <li class="nav-item mb-2"><a href="https://www.huya.com/" class="nav-link p-0 text-muted">虎牙</a></li>
+        <li class="nav-item mb-2"><a href="https://v.qq.com/" class="nav-link p-0 text-muted">腾讯视频</a></li>
+        <li class="nav-item mb-2"><a href="https://youku.com/" class="nav-link p-0 text-muted">优酷视频</a></li>
       </ul>
     </div>
   </footer>
