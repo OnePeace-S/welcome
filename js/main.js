@@ -29,7 +29,7 @@ const headNavBar = `
                         更多...
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">没有更多</a></li>
+                        <li><a class="dropdown-item" href="/pages/hello.html">测试</a></li>
                         <li><a class="dropdown-item" href="#">没有更多</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">没有更多</a></li>
