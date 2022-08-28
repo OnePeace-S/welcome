@@ -60,35 +60,37 @@ $.extend({
         }
         return null;
     },
-    Alert:function (content){
+    Alert:function (content,action){
+        let modalUuid = $.uuid();
+        let modalCloseUuid = $.uuid();
         const alertHtml = `
-            <!-- Modal -->
-            <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="${modalUuid}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">提示</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
                         <div class="modal-body">
                             <p>${content}</p>
                         </div>
                         <div class="modal-footer" style="justify-content: center">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="alertModal_close">确认</button>
+                            <button type="button" class="btn btn-primary" id="${modalCloseUuid}">确认</button>
                         </div>
                     </div>
                 </div>
             </div>
         `
         $("body").append(alertHtml)
-        const myModal = new bootstrap.Modal(document.getElementById('alertModal'), {
+        const myModal = new bootstrap.Modal(document.getElementById(modalUuid), {
+            keyboard: false,
+            backdrop: "static"
         });
         myModal.show()
-        $("#alertModal_close #alertModal").remove()
+        $("#"+modalCloseUuid+"").click(action)
+        $("#"+modalCloseUuid+"").click(function (){
+            myModal.hide()
+            $("#"+modalUuid+"").remove()
+        })
     },
     loading:function (){
         const loading = `
-            <!-- Modal -->
             <div class="modal fade" id="loading" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-fullscreen modal-dialog-centered">
                     <div class="modal-content" style="opacity:0.5">
@@ -117,20 +119,19 @@ $.extend({
         }
 
     },
-    //JS睡眠sleep()
-    sleep:function (numberMillis) {
-        let now = new Date();
-        const exitTime = now.getTime() + numberMillis;
-        while (true) {
-        now = new Date();
-        if (now.getTime() > exitTime){
-            return;
-        }
+    uuid:function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        })
     }
-}
 
 
-})
+
+
+
+    })
 
 $.fn.extend({
     pageInit:function (pages,method){

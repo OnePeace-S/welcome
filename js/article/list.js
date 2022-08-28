@@ -4,17 +4,16 @@ let pages = {
     total:0
 }
 $(function (){
-    $.loading()
-    console.log(pages)
-    query();
+    let search = $.getUrlParam("search");
+    query(search);
 })
 
 
-function query(){
-    let search = $.getUrlParam("search");
+function query(search){
+    $.loading()
     $.myAjax({
         url:"/article/queryList",
-        async:false,
+        async:true,
         data: {
             search:search,
             pages:pages
@@ -54,7 +53,6 @@ function setHtml(data){
     })
 
     $("page").pageInit(pages,query)
-    console.log(pages)
 
 }
 

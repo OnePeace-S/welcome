@@ -12,7 +12,7 @@ window.onload=function (){
     document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend",footerHtml)
     $("#index_search_button").click(function (){
         let search = $("#index_search_value").val();
-        window.location.href = "/welcome/pages/article/list.html?search="+search
+        window.location.href = projectName+"/pages/article/list.html?search="+search
     })
 
 }
@@ -22,11 +22,11 @@ window.onload=function (){
 const headNavBar = `
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">练习</a>
+        <a class="navbar-brand" href="${projectName}">练习</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">首页</a>
+                    <a class="nav-link active" aria-current="page" href="${projectName}">首页</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">关于</a>
@@ -37,7 +37,7 @@ const headNavBar = `
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/welcome/pages/article/edit.html">编辑</a></li>
-                        <li><a class="dropdown-item" href="/welcome/pages/article/view.html?article_code=11111">查看</a></li>
+                        <li><a class="dropdown-item" href="/welcome/pages/article/list.html">列表</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">没有更多</a></li>
                     </ul>

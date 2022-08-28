@@ -5,18 +5,22 @@ $(function (){
 
 
 function setView(article_code){
-
+    $.loading()
     $.myAjax({
         url:"/article/queryOneById",
-        async:false,
+        async:true,
         data: {
             id:article_code
         },
         success:function(data){
             if(data.code === 1){
+                $.loadingDown()
                 setHtml(data.data)
             }else {
-                $.Alert(data.msg);
+                $.loadingDown()
+                $.Alert(data.msg,function (){
+                    window.location.href = projectName+"/pages/article/list.html"
+                });
             }
         },
         error:function(e){
