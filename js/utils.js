@@ -1,7 +1,7 @@
 $(function (){
     $("page").append(`
             <div class="row justify-content-center" style="margin-top: 5px">
-                <div class="col-4">
+                <div class="col-12">
                     <ul class="pagination">
                         <li class="page-item" id="pageStart"><a class="page-link" pageNum="1">首页</a></li>
                         <li class="page-item" id="pageUp" ><a class="page-link" pageNum="1">上一页</a></li>
@@ -14,22 +14,6 @@ $(function (){
 })
 
 
-
-function $myAjax(option){
-    if(option.notHost === undefined){
-        option.url = host+option.url
-    }
-    $.ajax({
-        url:option.url,
-        method:"post",
-        async:option.async,
-        dataType: "json",
-        contentType: 'application/json',
-        data:JSON.stringify(option.data),
-        success:option.success,
-        error:option.error
-    })
-}
 
 $.extend({
     myAjax:function (option) {
@@ -90,34 +74,33 @@ $.extend({
         })
     },
     loading:function (){
-        const loading = `
-            <div class="modal fade" id="loading" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-                    <div class="modal-content" style="opacity:0.5">
-                        <div style="text-align: center;margin-top: 10%">
-                            <img src="${projectName}/img/loading.gif">
+        let  loading = `
+            <div class="modal" id="loadingUp" tabindex="-1">
+                <div class="modal-dialog modal-fullscreen modal-dialog-centered" style="opacity:0.5">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div style="text-align: center;margin-top: 10%">
+                                <img src="${projectName}/img/loading.gif">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         `
         $("body").append(loading)
-        const myModal = new bootstrap.Modal(document.getElementById('loading'), {
+        let myModalLoading = new bootstrap.Modal(document.getElementById("loadingUp"), {
             keyboard: false,
-            backdrop: false
-        });
-        myModal.show()
-    },
-    loadingDown:function (){
-        if(document.getElementById('loading')){
-            const myModal = new bootstrap.Modal(document.getElementById('loading'), {
-                keyboard: false,
-                backdrop: false
-            });
-            myModal.hide()
-            document.getElementById('loading').remove()
+            backdrop: "static"
+        })
+        myModalLoading.show()
+        console.log("up")
+        $.extend({
+            loadingDown:function (){
+                myModalLoading.hide()
+                document.getElementById("loadingUp").remove()
+                console.log("down")
         }
-
+        })
     },
     uuid:function () {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -125,11 +108,7 @@ $.extend({
                 v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         })
-    }
-
-
-
-
+    },
 
     })
 

@@ -19,3 +19,22 @@ bootstrap 按钮 点击后取消黑边
 *{
     font-family: 楷体;
 }
+
+/**
+滚动条样式
+ */
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #00ff9d;
+}
+
