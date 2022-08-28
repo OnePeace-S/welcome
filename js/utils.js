@@ -80,7 +80,7 @@ $.extend({
                     <div class="modal-content">
                         <div class="modal-body">
                             <div style="text-align: center;margin-top: 10%">
-                                <img src="${projectName}/img/loading.gif">
+                                <img src="https://thumbnail1.baidupcs.com/thumbnail/5c301b066o1c7571f610f71eb80d193f?fid=1102670925326-250528-806440569277525&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-9hoFRiY%2b%2fK%2b%2fxew6pLEkkEWNndQ%3d&expires=8h&chkbd=0&chkv=0&dp-logid=9025174331590709271&dp-callid=0&time=1661702400&size=c2048_u1152&quality=90&vuk=1102670925326&ft=image&autopolicy=1">
                             </div>
                         </div>
                     </div>
