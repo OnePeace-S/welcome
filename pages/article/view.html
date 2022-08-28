@@ -13,17 +13,30 @@
     <script src="../../plugin/editor.md-1.5.0/editormd.js"></script>
     <script src="../../plugin/editor.md-1.5.0/lib/marked.min.js"></script>
     <script src="../../plugin/editor.md-1.5.0/lib/prettify.min.js"></script>
+    <link rel="stylesheet" href="../../css/main.css"/>
     <script src="../../js/main.js"></script>
     <script src="../../js/utils.js"></script>
     <script src="../../js/article/view.js"></script>
-    <link rel="stylesheet" href="../../css/main.css"/>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10 offset-1" style="border: 1px solid #aaaaaa">
-            <div id="article_view" >
+        <div class="col-6 offset-3" style="border: 1px solid #aaaaaa;">
+            <div class="row">
+                <div class="col-6 offset-3" style="text-align: center">
+                    <h3 id="article_title"></h3>
+                </div>
             </div>
+            <div class="row">
+                <div class="col-4 offset-8">
+                    <i id="article_author_time"></i>
+                </div>
+            </div>
+            <div class="row" style="min-height: 600px;">
+                <div id="article_view" style="border-top: 1px solid #aaaaaa;">
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

@@ -1,5 +1,7 @@
 const host = 'http://127.0.0.1:8001'
 
+const projectName = "/welcome"
+
 
 if(document.getElementsByTagName("title")[0].text === 'Title'){
     document.title = '练习'
@@ -8,6 +10,11 @@ if(document.getElementsByTagName("title")[0].text === 'Title'){
 window.onload=function (){
     document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin",headNavBar)
     document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend",footerHtml)
+    $("#index_search_button").click(function (){
+        let search = $("#index_search_value").val();
+        window.location.href = "/welcome/pages/article/list.html?search="+search
+    })
+
 }
 
 
@@ -30,7 +37,7 @@ const headNavBar = `
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/welcome/pages/article/edit.html">编辑</a></li>
-                        <li><a class="dropdown-item" href="/welcome/pages/article/view.html?article_code=11111">编辑</a></li>
+                        <li><a class="dropdown-item" href="/welcome/pages/article/view.html?article_code=11111">查看</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">没有更多</a></li>
                     </ul>
@@ -38,7 +45,7 @@ const headNavBar = `
             </ul>
             <div class="d-flex" role="search">
                 <input class="form-control me-2" type="search" id="index_search_value" placeholder="搜索" aria-label="Search">
-                <input class="btn btn-outline-success" type="button" value="搜素" id="index_search_button"></input>
+                <input class="btn btn-outline-success" type="button" value="搜素" id="index_search_button"/>
             </div>
         </div>
     </div>

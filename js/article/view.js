@@ -3,7 +3,35 @@ $(function (){
     setView(article_code)
 })
 
-function setView(md_content){
+
+function setView(article_code){
+
+    $.myAjax({
+        url:"/article/queryOneById",
+        async:false,
+        data: {
+            id:article_code
+        },
+        success:function(data){
+            if(data.code === 1){
+                setHtml(data.data)
+            }else {
+                $.Alert(data.msg);
+            }
+        },
+        error:function(e){
+            console.log(e);
+        }
+    })
+}
+function setHtml(article){
+    $("#article_title").text(article.title)
+    $("#article_author_time").text(article.author + " [ " + article.updateTime + " ]")
+    setEditor(article.content);
+}
+
+
+function setEditor(md_content){
     let viewEditor;
     viewEditor = editormd.markdownToHTML("article_view", {
         markdown        : md_content,//+ "\r\n" + $("#append-test").text(),

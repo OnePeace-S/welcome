@@ -11,10 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../../plugin/editor.md-1.5.0/css/editormd.css" />
     <script src="../../plugin/editor.md-1.5.0/editormd.js"></script>
+    <link rel="stylesheet" href="../../css/main.css"/>
     <script src="../../js/main.js"></script>
     <script src="../../js/utils.js"></script>
     <script src="../../js/article/edit.js"></script>
-    <link rel="stylesheet" href="../../css/main.css"/>
 
     <style>
         #article_form .row{
@@ -31,7 +31,10 @@
                 <div class="col-8">
                     <input type="text" class="form-control" placeholder="标题" id="article_title"/>
                 </div>
-                <div class="col-3">
+                <div class="col-1">
+                    <input type="text" class="form-control" placeholder="署名" id="article_author"/>
+                </div>
+                <div class="col-2">
                     <input type="text" class="form-control" placeholder="标签" id="article_label"/>
                 </div>
                 <div class="col-1" style="align-self: center">
@@ -41,12 +44,6 @@
             <div class="row" >
                 <div id="article_content">
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-10 offset-1" style="border: 1px solid #aaaaaa">
-            <div id="article_view" >
             </div>
         </div>
     </div>

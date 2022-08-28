@@ -1,3 +1,7 @@
+
+/**
+bootstrap 按钮 点击后取消黑边
+ */
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -6,4 +10,12 @@
 .btn.active.focus {
     outline: none;
     box-shadow:none;
+}
+
+
+/**
+全局y样式
+ */
+*{
+    font-family: 楷体;
 }

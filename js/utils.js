@@ -1,9 +1,18 @@
-function $ById(id){
-    return document.getElementById(id);
-}
-function $ByTag(key,value){
-    return document.getElementsByTagNameNS(key,value);
-}
+$(function (){
+    $("page").append(`
+            <div class="row justify-content-center" style="margin-top: 5px">
+                <div class="col-4">
+                    <ul class="pagination">
+                        <li class="page-item" id="pageStart"><a class="page-link" pageNum="1">首页</a></li>
+                        <li class="page-item" id="pageUp" ><a class="page-link" pageNum="1">上一页</a></li>
+                        <li class="page-item" id="pageDown"><a class="page-link" pageNum="1">下一页</a></li>
+                        <li class="page-item" id="pageEnd"><a class="page-link" pageNum="1">尾页</a></li>
+                    </ul>
+                </div>
+            </div>
+    `);
+})
+
 
 
 function $myAjax(option){
@@ -50,6 +59,143 @@ $.extend({
             return decodeURI(r[2]);
         }
         return null;
+    },
+    Alert:function (content){
+        const alertHtml = `
+            <!-- Modal -->
+            <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">提示</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>${content}</p>
+                        </div>
+                        <div class="modal-footer" style="justify-content: center">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="alertModal_close">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+        $("body").append(alertHtml)
+        const myModal = new bootstrap.Modal(document.getElementById('alertModal'), {
+        });
+        myModal.show()
+        $("#alertModal_close #alertModal").remove()
+    },
+    loading:function (){
+        const loading = `
+            <!-- Modal -->
+            <div class="modal fade" id="loading" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                    <div class="modal-content" style="opacity:0.5">
+                        <div style="text-align: center;margin-top: 10%">
+                            <img src="${projectName}/img/loading.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+        $("body").append(loading)
+        const myModal = new bootstrap.Modal(document.getElementById('loading'), {
+            keyboard: false,
+            backdrop: false
+        });
+        myModal.show()
+    },
+    loadingDown:function (){
+        if(document.getElementById('loading')){
+            const myModal = new bootstrap.Modal(document.getElementById('loading'), {
+                keyboard: false,
+                backdrop: false
+            });
+            myModal.hide()
+            document.getElementById('loading').remove()
+        }
+
+    },
+    //JS睡眠sleep()
+    sleep:function (numberMillis) {
+        let now = new Date();
+        const exitTime = now.getTime() + numberMillis;
+        while (true) {
+        now = new Date();
+        if (now.getTime() > exitTime){
+            return;
+        }
+    }
+}
+
+
+})
+
+$.fn.extend({
+    pageInit:function (pages,method){
+        let indexHtml = ``;
+        $(this).find("[name='pageIndex']").remove()
+
+        let allPage = pages.total%pages.size > 0 ? Math.floor(pages.total/pages.size) + 1 : Math.floor(pages.total/pages.size)
+
+        let maxViewPage = 7
+
+        let loopNumBefore = 0
+        let loopNumAfter = 0
+        if(allPage <= maxViewPage){
+            loopNumAfter = allPage - pages.index + 1
+            loopNumBefore = allPage - loopNumAfter
+        }else {
+            loopNumAfter = allPage - pages.index >= Math.floor(maxViewPage/2) ? Math.floor(maxViewPage/2) + 1 : allPage - pages.index + 1
+            loopNumBefore = pages.index <= Math.floor(maxViewPage/2) ? pages.index - 1 : maxViewPage - loopNumAfter
+            loopNumAfter =  loopNumBefore <= Math.floor(maxViewPage/2) ? maxViewPage - loopNumBefore : loopNumAfter
+        }
+
+
+        for(let num = loopNumBefore ; num > 0 ; num--){
+            indexHtml += `
+            <li class="page-item" name="pageIndex"><a class="page-link" pageNum="${pages.index-num}">${pages.index-num}</a></li>
+            `
+        }
+
+        for(let num = 0 ; num < loopNumAfter ; num++){
+            indexHtml += `
+            <li class="page-item" name="pageIndex"><a class="page-link" pageNum="${pages.index+num}">${pages.index+num}</a></li>
+            `
+        }
+
+        $(this).find("#pageUp").after(indexHtml)
+
+        $(this).find("[pageNum='"+pages.index+"']").parent("[name='pageIndex']").addClass('active')
+
+
+        $(this).find("#pageStart").off("click")
+        $(this).find("#pageUp").off("click")
+        $(this).find("#pageDown").off("click")
+        $(this).find("#pageEnd").off("click")
+        $(this).find("[name='pageIndex']").off("click")
+        $(this).find("#pageStart").click(function (){
+            pages.index = 1
+            method()
+        })
+        $(this).find("#pageUp").click(function (){
+            pages.index -= pages.index <= 1 ? 0 : 1
+            method()
+        })
+        $(this).find("#pageDown").click(function (){
+            pages.index += pages.index >= allPage ? 0 : 1
+            method()
+        })
+        $(this).find("#pageEnd").click(function (){
+            pages.index = allPage
+            method()
+        })
+        $(this).find("[name='pageIndex']").click(function (){
+            pages.index = $(this).find("a").text()
+            method()
+        })
+
     }
 
 
