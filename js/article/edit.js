@@ -3,6 +3,7 @@ let article = {
 
 }
 $(function() {
+    $.loading()
     editor = editormd("article_content", {
         width  : "100%",
         height : "600px",
@@ -35,27 +36,24 @@ $(function() {
             content:markdown
         }
         save(article)
-
-
     })
-
-    function save(data){
-        $.myAjax({
-            url:"/article/save",
-            async:false,
-            data:data,
-            success:function(data){
-                if(data.code === 1){
-                    window.location.href = "list.html";
-                }else {
-                    $.Alert(data.msg);
-                }
-            },
-            error:function(e){
-                console.log(e);
-            }
-        })
-    }
-
-
+    $.loadingDown()
 });
+
+function save(data){
+    $.myAjax({
+        url:"/article/save",
+        async:false,
+        data:data,
+        success:function(data){
+            if(data.code === 1){
+                window.location.href = "list.html";
+            }else {
+                $.Alert(data.msg);
+            }
+        },
+        error:function(e){
+            console.log(e);
+        }
+    })
+}
