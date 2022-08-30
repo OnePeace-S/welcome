@@ -1,13 +1,16 @@
 $(function (){
     $("page").append(`
-            <div class="row justify-content-center" style="margin-top: 5px">
+            <div class="row" style="margin-top: 5px">
                 <div class="col-12">
-                    <ul class="pagination">
+                    <ul class="pagination justify-content-center">
                         <li class="page-item" id="pageStart"><a class="page-link" pageNum="1">首页</a></li>
                         <li class="page-item" id="pageUp" ><a class="page-link" pageNum="1">上一页</a></li>
                         <li class="page-item" id="pageDown"><a class="page-link" pageNum="1">下一页</a></li>
                         <li class="page-item" id="pageEnd"><a class="page-link" pageNum="1">尾页</a></li>
+                        <li class="page-item disabled" id="allPage"><a class="page-link">共 5 页</a></li>
+                        <li class="page-item disabled" id="count"><a class="page-link">总数 100</a></li>
                     </ul>
+                    
                 </div>
             </div>
     `);
@@ -80,7 +83,7 @@ $.extend({
                     <div class="modal-content">
                         <div class="modal-body">
                             <div style="text-align: center;margin-top: 10%">
-                                <img src="https://thumbnail1.baidupcs.com/thumbnail/5c301b066o1c7571f610f71eb80d193f?fid=1102670925326-250528-806440569277525&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-9hoFRiY%2b%2fK%2b%2fxew6pLEkkEWNndQ%3d&expires=8h&chkbd=0&chkv=0&dp-logid=9025174331590709271&dp-callid=0&time=1661702400&size=c2048_u1152&quality=90&vuk=1102670925326&ft=image&autopolicy=1">
+                                <img src="${projectName}/img/loading.gif">                          
                             </div>
                         </div>
                     </div>
@@ -131,8 +134,8 @@ $.fn.extend({
             loopNumBefore = pages.index <= Math.floor(maxViewPage/2) ? pages.index - 1 : maxViewPage - loopNumAfter
             loopNumAfter =  loopNumBefore <= Math.floor(maxViewPage/2) ? maxViewPage - loopNumBefore : loopNumAfter
         }
-
-
+        $(this).find("#allPage a").text("共 "+allPage+" 页")
+        $(this).find("#count a").text("总数 "+pages.total)
         for(let num = loopNumBefore ; num > 0 ; num--){
             indexHtml += `
             <li class="page-item" name="pageIndex"><a class="page-link" pageNum="${pages.index-num}">${pages.index-num}</a></li>

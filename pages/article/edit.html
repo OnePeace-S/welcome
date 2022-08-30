@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="../../plugin/bootstrap-5.1.3/dist/css/bootstrap.min.css"/>
     <script src="../../plugin/bootstrap-5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="../../plugin/jquery-3.6.0/jquery.js"></script>
     <link rel="stylesheet" href="../../plugin/editor.md-1.5.0/css/editormd.css" />
     <script src="../../plugin/editor.md-1.5.0/editormd.js"></script>
     <script src="../../plugin/editor.md-1.5.0/lib/marked.min.js"></script>
@@ -31,13 +31,13 @@
         <div class="col-10 offset-1" style="border:1px solid #aaaaaa;" id="article_form">
             <div class="row">
                 <div class="col-8">
-                    <input type="text" class="form-control" placeholder="标题" id="article_title"/>
-                </div>
-                <div class="col-1">
-                    <input type="text" class="form-control" placeholder="署名" id="article_author"/>
+                    <input type="text" class="form-control" placeholder="标题/50" id="article_title" maxlength="50"/>
                 </div>
                 <div class="col-2">
-                    <input type="text" class="form-control" placeholder="标签" id="article_label"/>
+                    <input type="text" class="form-control" placeholder="署名/6" id="article_author" maxlength="6"/>
+                </div>
+                <div class="col-1">
+                    <input type="text" class="form-control" placeholder="标签/5" id="article_label" maxlength="5"/>
                 </div>
                 <div class="col-1" style="align-self: center">
                     <input type="button" class="btn btn-primary" value="保存" id="article_form_submit"/>

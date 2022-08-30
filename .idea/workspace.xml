@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="086e7255-d11c-431a-93fc-bced3dbac587" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/plugin/jquery-3.6.0/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/article/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/article/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/article/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/article/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/article/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/article/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/view.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plugin/jquery-3.6.0" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -49,6 +58,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Up Every Day\Git\store\page\welcome\plugin\jquery-3.6.0" />
       <recent name="D:\Up Every Day\Git\store\page\welcome\img" />
       <recent name="D:\Up Every Day\Git\store\page\welcome\plugin" />
     </key>
@@ -66,7 +76,12 @@
       <updated>1661496841552</updated>
       <workItem from="1661496844097" duration="25854000" />
       <workItem from="1661588735198" duration="25746000" />
-      <workItem from="1661660442528" duration="20819000" />
+      <workItem from="1661660442528" duration="21421000" />
+      <workItem from="1661706314757" duration="1532000" />
+      <workItem from="1661743912440" duration="6000" />
+      <workItem from="1661752537905" duration="2045000" />
+      <workItem from="1661776074449" duration="1182000" />
+      <workItem from="1661783840076" duration="8370000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,7 @@ function setView(article_code){
                 setHtml(data.data)
             }else {
                 $.loadingDown()
-                $.Alert(data.msg,function (){
+                $.Alert(data["msg"],function (){
                     window.location.href = projectName+"/pages/article/list.html"
                 });
             }
@@ -30,7 +30,7 @@ function setView(article_code){
 }
 function setHtml(article){
     $("#article_title").text(article.title)
-    $("#article_author_time").text(article.author + " [ " + article.updateTime + " ]")
+    $("#article_author_time_views").text(article["author"] + " [ " + article["updateTime"] + " ]" + " 浏览量 " + article["views"] + " 次")
     setEditor(article.content);
 }
 

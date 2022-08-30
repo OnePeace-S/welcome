@@ -1,8 +1,9 @@
 let editor;
 let article = {
-
+    id:null
 }
 $(function() {
+    article.id = $.getUrlParam("article_code")
     $.loading()
     editor = editormd("article_content", {
         width  : "100%",
@@ -30,11 +31,9 @@ $(function() {
         let article_title = $("#article_title").val();
         let article_author = $("#article_author").val();
         let markdown = editor.getMarkdown();
-        article = {
-            title:article_title,
-            author:article_author,
-            content:markdown
-        }
+        article.title = article_title
+        article.author = article_author
+        article.content = markdown
         save(article)
     })
     $.loadingDown()
@@ -42,14 +41,16 @@ $(function() {
 
 function save(data){
     $.myAjax({
-        url:"/article/save",
+        url:"/article/saveAndUpdate",
         async:false,
         data:data,
         success:function(data){
             if(data.code === 1){
-                window.location.href = "list.html";
+                $.Alert("保存成功",function (){
+                    window.location.href = "list.html";
+                });
             }else {
-                $.Alert(data.msg);
+                $.Alert(data["msg"]);
             }
         },
         error:function(e){

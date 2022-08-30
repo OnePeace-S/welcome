@@ -39,7 +39,7 @@ const headNavBar = `
                         <li><a class="dropdown-item" href="/welcome/pages/article/edit.html">编辑</a></li>
                         <li><a class="dropdown-item" href="/welcome/pages/article/list.html">列表</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">没有更多</a></li>
+                        <li><a class="dropdown-item" href="#">没有更多了</a></li>
                     </ul>
                 </li>
             </ul>

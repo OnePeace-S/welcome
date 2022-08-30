@@ -24,7 +24,7 @@ function query(search){
                 $.loadingDown()
             }else {
                 $.loadingDown()
-                $.Alert(data.msg);
+                $.Alert(data["msg"]);
             }
         },
         error:function(e){
@@ -39,14 +39,14 @@ function setHtml(data){
     const $articleList = $("#article_list")
     $articleList.children().remove()
     $.each(list ,function (index,item){
-        const content = item.content.substring(0,100)
+        const content = item.content.length > 97 ? item.content.substring(0,97) + "..." : item.content.substring(0,item.content.length)
         const html = `
                 <a href="view.html?article_code=${item.id}" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">${item.title}</h5>
                         <small>${item.author} | ${item.updateTime}</small>
                     </div>
-                    <small>${content}...</small>
+                    <small>${content}</small>
                 </a>    
         `
         $articleList.append(html)
