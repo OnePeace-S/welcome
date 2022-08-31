@@ -30,21 +30,25 @@ $(function() {
 
         let article_title = $("#article_title").val();
         let article_author = $("#article_author").val();
+        let article_password = $("#article_password").val();
         let markdown = editor.getMarkdown();
         article.title = article_title
         article.author = article_author
         article.content = markdown
+        article.password= article_password
         save(article)
     })
     $.loadingDown()
 });
 
 function save(data){
+    $.loading()
     $.myAjax({
         url:"/article/saveAndUpdate",
         async:false,
         data:data,
         success:function(data){
+            $.loadingDown()
             if(data.code === 1){
                 $.Alert("保存成功",function (){
                     window.location.href = "list.html";

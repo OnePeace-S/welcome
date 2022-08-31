@@ -1,26 +1,38 @@
+let article = {}
+let passwordCount = 5
 $(function (){
     let article_code = $.getUrlParam("article_code");
-    setView(article_code)
+    let article_password = $("#article_password").val();
+    article.id = article_code
+    setView(article)
 })
 
 
-function setView(article_code){
+function setView(data){
     $.loading()
     $.myAjax({
         url:"/article/queryOneById",
         async:true,
-        data: {
-            id:article_code
-        },
+        data: data,
         success:function(data){
+            $.loadingDown()
             if(data.code === 1){
-                $.loadingDown()
+                passwordCount = 5
                 setHtml(data.data)
             }else {
-                $.loadingDown()
-                $.Alert(data["msg"],function (){
-                    window.location.href = projectName+"/pages/article/list.html"
-                });
+                if(data.code === 2 || data.code === 3){
+                    if(passwordCount === 0){
+                        window.location.href = projectName+"/pages/article/list.html"
+                    }
+                    $("#password .modal-title").text(data['msg']+" 剩余次数("+passwordCount+"次)")
+                    comparePassword()
+                    passwordCount++
+                }else{
+                    $.Alert(data["msg"],function (){
+                        window.location.href = projectName+"/pages/article/list.html"
+                    });
+                }
+
             }
         },
         error:function(e){
@@ -53,4 +65,18 @@ function setEditor(md_content){
         flowChart       : false,  // 默认不解析
         sequenceDiagram : false,  // 默认不解析
     });
+}
+
+function comparePassword(){
+    const myModal = new bootstrap.Modal(document.getElementById("password"), {
+        keyboard: false,
+        backdrop: "static"
+    });
+    myModal.show()
+    $("#passwordButton").off("click")
+    $("#passwordButton").click(function (){
+        article.password = $("#article_password").val()
+        setView(article)
+        myModal.hide()
+    })
 }
