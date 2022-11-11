@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--设置ico图标-->
+    <link rel="shortcut icon" href="../../img/favico.png">
+
+    <link rel="stylesheet" href="../../plugin/bootstrap-5.1.3/dist/css/bootstrap.min.css"/>
+    <script src="../../plugin/bootstrap-5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../plugin/jquery-3.6.0/jquery.js"></script>
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <style>
+        body {
+            min-height: 100vh;
+            width: 100%;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid" style="background-color: black;">
+    <div class="row">
+        <div class="col-3" style="background-color: #00d0ff;height: 100vh;padding: 0;">
+            <div class="col-12" style="">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="好友名称/账号"/>
+                    <input class="btn" style="background-color: #219b5e" type="button" onclick="main_send_message()" value="  搜 索  "></input>
+                </div>
+            </div>
+            <div class="col-12" style="padding: 0;overflow-y: auto;height: 92vh;">
+                <ul class="list-group" id="friend_list">
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-9" id="right_send_message">
+            <div class="row" style="background-color: #f6e837;height: 100vh;" id="right_default">
+            </div>
+            <div class="row" style="background-color: #c0e8f4;height: 100vh;display: none;" id="right_message">
+                <div class="col-12" style="width: 100%;height: 90vh;overflow-y: auto;" id="message">
+
+                </div>
+                <div class="col-12" style="padding-left: 0;padding-right: 0;width: 100%;background-color: #d00b0b;" id="operate">
+                    <div class="input-group mb-3" style="height: 100%">
+                        <input type="text" class="form-control" id="send_message" placeholder="输入文本"/>
+                        <input class="btn" style="background-color: #219b5e" type="button" onclick="main_send_message()" value="  发  送  "></input>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let socket = null
+    let userAccount = "test"
+    let receiveUser = "";
+    let socketUrl = `ws://127.0.0.1:8001/socketTalk/single/${userAccount}`
+    window.onload=function () {
+        main_socket_connect()
+        setFriendList()
+
+        document.getElementById("send_message").onkeydown = function (event){
+            const e = event || window.event;
+            if (e && e.keyCode === 13){
+                main_send_message()
+            }
+        }
+    }
+    function main_socket_connect(){
+        const url = socketUrl;
+        socket = new WebSocket(url);
+
+        socket.onopen = function () {
+            console.log("websocket建立连接")
+            document.getElementById("message").innerHTML = '';
+            let talkMessage = setTalkMessage({sendUser:userAccount,receiveUser:receiveUser,message: "",action: "join"})
+            sendMessage(talkMessage)
+        }
+
+        socket.onmessage = function (msg) {
+            console.log(msg)
+            setData(msg.data)
+        }
+
+        socket.onclose = function () {
+            socket = null
+            console.log("websocket已关闭")
+            messageAddHtml(`连接已断开<a onclick="main_socket_connect()" href="">重新连接</a>`,"left")
+        }
+
+        socket.onerror = function () {
+            socket = null
+            console.log("websocket发生了错误")
+            messageAddHtml(`连接时错误<a onclick="main_socket_connect()" href="">重新连接</a>`,"left")
+        }
+    }
+    function setTalkMessage(option){
+        let talkMessage = {
+            sendUser: option.sendUser,
+            receiveUser: option.receiveUser,
+            message: option.message,
+            action:option.action
+        }
+        return talkMessage
+    }
+    function main_send_message(){
+        let message = document.getElementById("send_message").value
+        if(message === '') return;
+        document.getElementById("send_message").value = ''
+        let talkMessage = setTalkMessage({sendUser:userAccount,receiveUser:receiveUser,message: message,action: "talk"})
+        sendMessage(talkMessage)
+    }
+    function messageAddHtml(message,direction){
+
+        let html = ``
+
+        if(direction === 'right'){
+            html = `
+            <div class="col-12" style="text-align:right;margin-top: 10px;">
+                <p style="max-width: 80%;background-color: #00ff9d;display: inline-block;padding: 0.375rem 0.75rem;border-radius: 0.35rem;word-break: break-all;word-wrap: break-word;">${message}</p>
+                <img src="../../img/favico.png" height="30px"/>
+            </div>
+        `
+        }else if(direction === 'left'){
+            html = `
+            <div class="col-12" style="text-align:left;margin-top: 10px;">
+                <img src="../../img/favico.png" height="30px"/>
+                <p style="max-width: 80%;background-color: #00ff9d;display: inline-block;padding: 0.375rem 0.75rem;border-radius: 0.35rem;word-break: break-all;word-wrap: break-word;">${message}</p>
+            </div>
+        `
+        }
+
+        document.getElementById("message").insertAdjacentHTML("beforeend",html)
+        document.getElementById('message').scrollTop = document.getElementById('message').scrollHeight
+
+    }
+
+    function setData(result){
+        let socketMessage = JSON.parse(result);
+        let content = ``;
+        if(socketMessage.status === 2){
+            content = `${socketMessage.message}<a onclick="main_socket_connect()" href="">重新连接</a>`
+            messageAddHtml(content,"left")
+        }else if(socketMessage.status === 0){
+            const list = socketMessage["messageList"]
+            for(let i = 0 ; i < list.length ; i++ ){
+                if(list[i]["sendUser"] === userAccount){
+                    content = list[i]["message"]
+                    messageAddHtml(content,"right")
+                }else {
+                    content = list[i]["message"]
+                    messageAddHtml(content,"left")
+                }
+            }
+        }else if(socketMessage.status === 1){
+            const list = socketMessage["messageList"]
+            for(let i = 0 ; i < list.length ; i++ ){
+                if(list[i]["sendUser"] === userAccount){
+                    content = list[i]["message"]
+                    messageAddHtml(content,"right")
+                }else {
+                    content = list[i]["message"]
+                    messageAddHtml(content,"left")
+                }
+            }
+        }
+
+    }
+    function sendMessage(talkMessage){
+
+        if(socket === null || socket.readyState !== 1){
+            messageAddHtml(`连接已断开<a onclick="main_socket_connect()" href="">重新连接</a>`,"left")
+            return;
+        }
+        if(talkMessage.action === 'talk') {
+            messageAddHtml(talkMessage.message, "right")
+        }
+        socket.send(JSON.stringify(talkMessage))
+    }
+    function setFriendList(){
+        const html = `
+<li class="list-group-item" name="friend_list_li" account="test"><img src="../../img/favico.png" height="100%" width="5%" class="border border-dark"> test</li>
+<li class="list-group-item" name="friend_list_li" account="admin"><img src="../../img/favico.png" height="100%" width="5%" class="border border-dark"> admin</li>
+`
+        document.getElementById("friend_list").insertAdjacentHTML("beforeend",html)
+
+        $("[name='friend_list_li']").unbind("click");
+        $("[name='friend_list_li']").bind("click",function (){
+            receiveUser = $(this).attr("account")
+            document.getElementById("message").innerHTML = '';
+            let talkMessage = setTalkMessage({sendUser:userAccount,receiveUser:receiveUser,message: "",action: "join"})
+            sendMessage(talkMessage)
+            toggle("show_message")
+        })
+
+    }
+    function toggle(flag){
+        if(flag === "show_message"){
+            $("#right_default").hide()
+            $("#right_message").show()
+        }else {
+            $("#right_default").show()
+            $("#right_message").hide()
+        }
+
+    }
+
+</script>
+</body>
+</html>

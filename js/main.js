@@ -1,12 +1,12 @@
 const host = 'http://127.0.0.1:8001'
-
+let socket=null;
 const projectName = "/welcome"
 
+let user_account = "test";
 
 if(document.getElementsByTagName("title")[0].text === 'Title'){
     document.title = '练习'
 }
-
 window.onload=function (){
     document.getElementsByTagName("body")[0].insertAdjacentHTML("afterbegin",headNavBar)
     document.getElementsByTagName("body")[0].insertAdjacentHTML("beforeend",footerHtml)
@@ -14,7 +14,7 @@ window.onload=function (){
         let search = $("#index_search_value").val();
         window.location.href = projectName+"/pages/article/list.html?search="+search
     })
-
+    startConsult()
 }
 
 

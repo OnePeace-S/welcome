@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="086e7255-d11c-431a-93fc-bced3dbac587" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/js/article/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/article/edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/聊天.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/chat1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/chat/chatMain.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/chat/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/chat/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/article/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/article/view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/article/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/article/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/hello.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +28,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -43,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/plugin/jquery-3.6.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -52,8 +70,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Up Every Day\Git\store\page\welcome\plugin\jquery-3.6.0" />
+      <recent name="D:\Up Every Day\Git\store\page\welcome\js" />
       <recent name="D:\Up Every Day\Git\store\page\welcome\img" />
+      <recent name="D:\Up Every Day\Git\store\page\welcome\plugin\jquery-3.6.0" />
       <recent name="D:\Up Every Day\Git\store\page\welcome\plugin" />
     </key>
   </component>
@@ -76,7 +95,17 @@
       <workItem from="1661752537905" duration="2045000" />
       <workItem from="1661776074449" duration="1182000" />
       <workItem from="1661783840076" duration="8370000" />
-      <workItem from="1661827464374" duration="11274000" />
+      <workItem from="1661827464374" duration="12472000" />
+      <workItem from="1661963046857" duration="44000" />
+      <workItem from="1662274159423" duration="10344000" />
+      <workItem from="1662304517172" duration="8293000" />
+      <workItem from="1662340987640" duration="8565000" />
+      <workItem from="1662477256394" duration="4921000" />
+      <workItem from="1662518423938" duration="26773000" />
+      <workItem from="1662720033750" duration="3908000" />
+      <workItem from="1662739059468" duration="578000" />
+      <workItem from="1662805957901" duration="8524000" />
+      <workItem from="1663428164208" duration="11000" />
     </task>
     <servers />
   </component>

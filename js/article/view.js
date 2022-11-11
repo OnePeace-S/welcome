@@ -26,7 +26,7 @@ function setView(data){
                     }
                     $("#password .modal-title").text(data['msg']+" 剩余次数("+passwordCount+"次)")
                     comparePassword()
-                    passwordCount++
+                    passwordCount--
                 }else{
                     $.Alert(data["msg"],function (){
                         window.location.href = projectName+"/pages/article/list.html"
